@@ -1,27 +1,56 @@
-import React from 'react'
+import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
-function Signup() {
+function Signup(props) {
+    const [password, setPassword] = useState('');
+    const [email, setEmail] = useState('');
+    const [username, setUsername] = useState('');
+    const [errorMessage, setErrorMessage] = useState(undefined);
+
+    const navigate = useNavigate();
+
+    const handlePassword = (e) => setPassword(e.target.value);
+    const handleEmail = (e) => setEmail(e.target.value);
+    const handleUsername = (e) => setUsername(e.target.value);
+
+
+    const handleSignupSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            //try to create the user
+            await axios.post(`${process.env.REACT_APP_API_URL}/signup`, { username, email, password });
+            //redirect
+            navigate('/login');
+        } catch (error) {
+            const errorDescription = error.response.data.message;
+            setErrorMessage(errorDescription);
+        }
+    };
+
     return (
-        <div>
-            <h1>Create new Account</h1>
+        <div className="SignupPage">
+            <h1>Sign Up</h1>
 
-            <form onSubmit={handleSubmit}>
-                <label htmlFor="username">USERNAME</label>
-                <input type="text" name="username" placeholder='username' value={username} onChange={handleUsername} />
+            <form onSubmit={handleSignupSubmit}>
+                <label>Email:</label>
+                <input type="email" name="email" value={email} onChange={handleEmail} />
 
-                <label htmlFor="email">EMAIL</label>
-                <input type="text" name="email" placeholder='email' value={email} onChange={handleEmail} />
+                <label>Username:</label>
+                <input type="text" name="username" value={username} onChange={handleUsername} />
 
-                <label htmlFor="location">LOCATION</label>
-                <input type="text" name="location" placeholder='your current location' value={location} onChange={handleLocation} />
+                <label>Password:</label>
+                <input type="password" name="password" value={password} onChange={handlePassword} />
 
-                <label htmlFor="password">PASSWORD</label>
-                <input type="text" name="password" placeholder='********' value={password} onChange={handlePassword} />
-
-                <button type="submit">Sign up</button>
+                <button type="submit">Sign Up</button>
             </form>
+
+            {errorMessage && <p className="error-message">{errorMessage}</p>}
+
+            <p>Already have account?</p>
+            <Link to="/login"> Login</Link>
         </div>
-    )
+    );
 }
 
-export default Signup
+export default Signup;

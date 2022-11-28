@@ -1,0 +1,23 @@
+.city-card_container {
+    width: 35vw;
+    text-decoration: none;
+}
+
+.city-card_container img {
+    width: 45vw;
+}
+
+.cards_item_text {
+    color: black;
+    font-size: 22px;
+}
+
+.city-home_container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    text-decoration: none;
+}
