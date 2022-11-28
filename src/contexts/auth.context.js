@@ -26,6 +26,7 @@ function AuthProviderWrapper(props) {
                 const response = await axios.get(`${process.env.REACT_APP_API_URL}/verify`, {
                     headers: { Authorization: `Bearer ${storedToken}` },
                 });
+                console.log("okaaaaay_________", response.data)
 
                 ///the next part happens if the login was successful
                 setLoggedIn(true);

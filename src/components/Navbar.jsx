@@ -32,10 +32,12 @@ function Navbar() {
 
     function openNav() {
         document.getElementById("myNav").style.width = "100%";
+        document.getElementById("hamburguerMenu").style.display = "none";
     }
 
     function closeNav() {
         document.getElementById("myNav").style.width = "0%";
+        document.getElementById("hamburguerMenu").style.display = "block";
     }
 
     return (
@@ -63,19 +65,21 @@ function Navbar() {
                             <Link to='/login' className='nav-links-mobile' onClick={closeMobileMenu}>LOGIN</Link>
                         </li>
                     </ul>
+                </div>
+                <div>
                     {button && <Link><Button buttonStyle='btn--outline'>SIGN UP</Button></Link>}
-                </div>
 
-                <div id="myNav" className="overlay">
-                    <a href="javascript:void(0)" className="closebtn" onClick={closeNav}>&times;</a>
-                    <div classNmae="overlay-content">
-                        <Link to='/' className='nav-links' onClick={closeNav}>HOME</Link>
-                        <Link to='/top-cities' className='nav-links' onClick={closeNav}>TOP CITIES</Link>
-                        <Link to='/profile' className='nav-links' onClick={closeNav}>PROFILE</Link>
+                    <div id="myNav" className="overlay">
+                        <a href="javascript:void(0)" className="closebtn" onClick={closeNav}>&times;</a>
+                        <div className="overlay-content">
+                            <Link to='/' onClick={closeNav}>HOME</Link>
+                            <Link to='/top-cities' onClick={closeNav}>TOP CITIES</Link>
+                            <Link to='/profile' onClick={closeNav}>PROFILE</Link>
 
+                        </div>
                     </div>
+                    <span id="hamburguerMenu" className="openNav" onClick={openNav}>&#9776;</span>
                 </div>
-                <span className="openNav" onClick={openNav} openNav>&#9776;</span>
             </nav>
 
             <TopCities />
