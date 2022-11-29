@@ -57,10 +57,6 @@ function UpdateProfile() {
     return (
         <div className='EditProfilePage'>
 
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
 
             <form onSubmit={handleSubmit}>
                 <label htmlFor='username'>Username</label>

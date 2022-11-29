@@ -29,7 +29,7 @@ function Signup(props) {
     };
 
     return (
-        <div className="SignupPage">
+        <div className="signup-form">
             <h1>Sign Up</h1>
 
             <form onSubmit={handleSignupSubmit}>
@@ -42,13 +42,13 @@ function Signup(props) {
                 <label>Password:</label>
                 <input type="password" name="password" value={password} onChange={handlePassword} />
 
-                <button type="submit">Sign Up</button>
+                <button type="submit" className='login-button'>Sign Up</button>
             </form>
 
             {errorMessage && <p className="error-message">{errorMessage}</p>}
 
             <p>Already have account?</p>
-            <Link to="/login"> Login</Link>
+            <Link to="/login" className='form-button'> Login</Link>
         </div>
     );
 }

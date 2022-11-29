@@ -3,6 +3,7 @@ import '../App.css';
 import SectionOne from '../components/SectionOne';
 import axios from 'axios';
 import CardItem from '../components/cityCards/CardItem';
+import { Link } from 'react-router-dom'
 
 function Home() {
     const [cities, setCities] = useState([]);
@@ -26,6 +27,15 @@ function Home() {
     return (
         <>
             <SectionOne />
+            {/*  {cities.map(city => {
+                <div className='city-home_container' key={city._id}>
+                    <Link to={`cities/${city._id}`}>
+                        return <CardItem city={city} />
+                    </Link>
+                </div>
+            })} */}
+            <h1 className='home-titles'>Top Cities for Digital Nomads</h1>
+
             <div className='city-home_container'>
                 {cities.map(city => {
                     return <CardItem city={city} />

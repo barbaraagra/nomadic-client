@@ -10,6 +10,7 @@ import Start from './pages/Start';
 import Profile from './pages/Profile';
 import City from './pages/City';
 import UpdateProfile from './pages/UpdateProfile';
+import Footer from './components/Footer'
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
         <Route path='/top-cities' element={<TopCities />} />
         <Route path='/city/:id' element={<City />} />
       </Routes>
+      <Footer />
     </div>
   );
 }

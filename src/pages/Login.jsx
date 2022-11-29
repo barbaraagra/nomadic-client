@@ -34,7 +34,7 @@ function Login(props) {
     };
 
     return (
-        <div className="LoginPage">
+        <div className="login-form">
             <h1>Login</h1>
 
             <form onSubmit={handleLoginSubmit}>
@@ -44,12 +44,12 @@ function Login(props) {
                 <label>Password:</label>
                 <input type="password" name="password" value={password} onChange={handlePassword} />
 
-                <button type="submit">Login</button>
+                <button type="submit" className='login-button'>Login</button>
             </form>
             {errorMessage && <p className="error-message">{errorMessage}</p>}
 
             <p>Don't have an account yet?</p>
-            <Link to={'/signup'}>Sign Up</Link>
+            <Link to={'/signup'} className='form-button'>Sign Up</Link>
         </div>
     );
 }
