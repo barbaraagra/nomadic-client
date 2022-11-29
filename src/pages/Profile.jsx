@@ -29,13 +29,18 @@ function Profile() {
 
 
             {thisUser && (
-                <div>  <h1>Welcome, {thisUser.username}</h1>
+                <div>
                     <img src={thisUser.imageUrl} alt="profilepic" />
-                    <Link to={`/profile/edit/${thisUser._id}`}> Edit Profile </Link>
+                    <h3>Hello there, {thisUser.username}</h3>
+                    <h4>Currently living in {thisUser.location}</h4>
 
+                    <h4> Comments</h4>
                     {thisUser.comments.map(comment => {
                         return <p>{comment.content}</p>
                     })}
+                    <Link to={`/profile/edit/${thisUser._id}`} className='edit-profile'>Edit Profile</Link>
+                    <Link to={`/profile/edit/${thisUser._id}`} className='delete-profile'>Delete Profile</Link>
+
                 </div>
             )}
 

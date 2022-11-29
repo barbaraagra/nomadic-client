@@ -353,3 +353,74 @@ form input,
 .fav-btn img {
   width: 40px;
 }
+
+.header-img {
+  width: 100vw;
+}
+
+.citypage_namefav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.citypage_namefav h3 {
+  color: #A45836;
+}
+
+.citypage_namefav h5 {
+  color: #A45836;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.add-comment_btn {
+  background-color: #A45836;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+}
+
+.comments {
+  color: #A45836;
+}
+
+.form-commentbox {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+}
+
+.form-commentbox label {
+  text-align: center;
+}
+
+/* PROFILE */
+
+.edit-profile {
+  background-color: #A45836;
+  color: white;
+  padding: 8px 15px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.edit-profile:hover {
+  background-color: #da703f;
+}
+
+.delete-profile {
+  background-color: #423839;
+  color: white;
+  padding: 8px 15px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.delete-profile:hover {
+  background-color: #6d5d5e;
+}

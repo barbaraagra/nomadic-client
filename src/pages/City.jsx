@@ -55,29 +55,38 @@ function City() {
     <div>
 
       {cityPage &&
-        (<><img src={cityPage.cityImage} alt="city" />
-          <Link className='fav-btn'> <img src={FavButton} alt="" /></Link>
-          <h3>{cityPage.cityName}</h3>
-          <h5>{cityPage.continent}</h5>
-          <p>{cityPage.summary}</p>
-          <p>{cityPage.currency}</p>
-          <p>{cityPage.language}</p>
-          <p>{cityPage.englishSkills}</p>
-          <p>{cityPage.lifeExpectancy}</p>
-          <p>{cityPage.coworkingSpaces}</p>
+        (<><img src={cityPage.cityImage} alt="city" className='header-img' />
+
+          <div className='citypage_namefav'>
+            <div>
+              <h3>{cityPage.cityName}</h3>
+              <h5>{cityPage.continent}</h5>
+            </div>
+            <Link className='fav-btn'> <img src={FavButton} alt="" /></Link>
+          </div>
+
+          <p>Summary: {cityPage.summary}</p>
+          <p>Currency: {cityPage.currency}</p>
+          <p>Language: {cityPage.language}</p>
+          <p>English Skills: {cityPage.englishSkills}</p>
+          <p>Life Expectancy: {cityPage.lifeExpectancy}</p>
+          <p>CoWorking Spaces: {cityPage.coworkingSpaces}</p>
+
+          <h4 className='comments'>Comments</h4>
+
+          <div className='comments-city'> {cityPage.comments.map(comment => {
+            return <p>{comment.content}</p>
+          })}
+          </div>
         </>)
       }
-
-      {/*    {cityPage.comments.map(comment => {
-        return <p>{comment.content}</p>
-      })} */}
-
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="content">Comments</label>
-        <textarea name="content" cols="30" rows="10" onChange={handleContent}></textarea>
-        <button type='submit'>Add Comment</button>
-      </form>
-
+      <div className='form-commentbox'>
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="content">Write a Comment</label>
+          <textarea name="content" cols="50" rows="10" onChange={handleContent}></textarea>
+          <div> <button className='add-comment_btn' type='submit'>Add Comment</button></div>
+        </form>
+      </div>
     </div >
   )
 }
