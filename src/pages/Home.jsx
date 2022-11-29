@@ -27,18 +27,21 @@ function Home() {
     return (
         <>
             <SectionOne />
-            {/*  {cities.map(city => {
+
+            {/*    {cities.map(city => {
                 <div className='city-home_container' key={city._id}>
                     <Link to={`cities/${city._id}`}>
                         return <CardItem city={city} />
                     </Link>
                 </div>
             })} */}
+
             <h1 className='home-titles'>Top Cities for Digital Nomads</h1>
 
             <div className='city-home_container'>
                 {cities.map(city => {
                     return <CardItem city={city} />
+
                 })}
             </div>
         </>

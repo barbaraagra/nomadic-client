@@ -25,7 +25,7 @@ function App() {
         <Route path='/profile' element={<Profile />} />
         <Route path='/profile/edit/:id' element={<UpdateProfile />} />
         <Route path='/top-cities' element={<TopCities />} />
-        <Route path='/city/:id' element={<City />} />
+        <Route path='/cities/:id' element={<City />} />
       </Routes>
       <Footer />
     </div>

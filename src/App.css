@@ -1,4 +1,5 @@
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
@@ -22,7 +23,6 @@
   justify-content: center;
   align-items: center;
   height: 80px;
-  max-width: 1500px;
 }
 
 .navbar-logo {
@@ -39,7 +39,6 @@
 .navbar-logo img {
   width: 150px;
 }
-
 
 .nav-menu {
   display: grid;
@@ -114,14 +113,6 @@
     border-radius: 0;
     padding: 8px 10px
   }
-
-  /* 
-  .navbar-logo {
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: translate(25%, 50%);
-  } */
 
   .menu-icon {
     display: block;
@@ -340,14 +331,12 @@ form input,
 
 .footer {
   background-color: #423839;
-  margin-top: 20px;
   color: white;
   text-align: right;
 }
 
 .footer p {
-  padding-top: 15px;
-  padding-right: 10px;
+  padding: 5px 10px 5px;
   font-size: 12px;
 }
 
@@ -357,4 +346,10 @@ form input,
   color: #A45836;
   font-size: 30px;
   margin: 20px;
+}
+
+/* CITY PAGE */
+
+.fav-btn img {
+  width: 40px;
 }
