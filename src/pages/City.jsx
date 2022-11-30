@@ -1,5 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../contexts/auth.context';
 import axios from 'axios';
 import FavButton from '../assets/fav.png';
 import '../App.css'
@@ -8,9 +9,11 @@ import '../App.css'
 
 function City() {
   const [content, setContent] = useState("");
+  const [isFavourite, setIsFavourite] = useState(false)
 
   const [cityPage, setCityPage] = useState(null);
   const { id } = useParams();
+  const { user, loggedIn } = useContext(AuthContext)
 
   const navigate = useNavigate();
 
@@ -21,8 +24,6 @@ function City() {
     try {
 
       const storedToken = localStorage.getItem('authToken');
-
-
       const apiCall = await axios.post(`${process.env.REACT_APP_API_URL}/comments/create/${id}`, { content }, {
         headers: { Authorization: `Bearer ${storedToken}` },
       });
@@ -38,10 +39,29 @@ function City() {
   const getCityPage = async () => {
     try {
       const response = await axios.get(`${process.env.REACT_APP_API_URL}/cities/${id}`);
+      console.log('useeer', user)
 
+      if (response.data.favorite.includes(user._id)) {
+        setIsFavourite(true)
+      } else {
+        setIsFavourite(false)
+      }
       setCityPage(response.data);
       console.log(response.data);
 
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const addFavourite = async () => {
+    try {
+      const storedToken = localStorage.getItem('authToken');
+      await axios.get(`${process.env.REACT_APP_API_URL}/favourite-city/${id}`, {
+        headers: { Authorization: `Bearer ${storedToken}` },
+      });
+
+      getCityPage();
     } catch (error) {
       console.log(error);
     }
@@ -64,7 +84,10 @@ function City() {
                 <h3>{cityPage.cityName}</h3>
                 <h5>{cityPage.continent}</h5>
               </div>
-              <Link className='fav-btn'> <img src={FavButton} alt="" /></Link>
+
+              {isFavourite ? <p>Unfavourite:</p> : <p>Favourite</p>}
+              <button onClick={addFavourite} className='fav-btn'> <img src={FavButton} alt="" /></button>
+
             </div>
             <div className='city-api-info'>
               <p><div dangerouslySetInnerHTML={{ __html: cityPage.description }} /></p>
@@ -78,7 +101,7 @@ function City() {
           </div>
 
           <div className='comment_section'>
-            
+
             <h4 className='comments'>Comments</h4>
 
             <div className='comments-city'> {cityPage.comments.map(comment => {
@@ -91,7 +114,7 @@ function City() {
       <div className='form-commentbox'>
         <form onSubmit={handleSubmit}>
           <label htmlFor="content">Write a Comment</label>
-          <textarea name="content" cols="50" rows="10" onChange={handleContent}></textarea>
+          <textarea name="content" cols="40" rows="10" onChange={handleContent}></textarea>
           <div> <button className='add-comment_btn' type='submit'>Add Comment</button></div>
         </form>
       </div>

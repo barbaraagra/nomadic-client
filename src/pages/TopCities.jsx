@@ -3,7 +3,7 @@ import axios from 'axios';
 import CardItem from '../components/cityCards/CardItem';
 
 function TopCities() {
-  /* const [cities, setCities] = useState([]);
+  const [cities, setCities] = useState([]);
 
   const getCities = async () => {
     try {
@@ -23,7 +23,7 @@ function TopCities() {
 
   return (
     <>
-      <h1 className='home-titles'>Top Cities</h1>
+      <h1 className='home-titles'>Top Cities for Digital Nomads</h1>
 
       <div className='city-home_container'>
         {cities.map(city => {
@@ -32,7 +32,7 @@ function TopCities() {
         })}
       </div>
     </>
-  ) */
+  )
 }
 
 export default TopCities

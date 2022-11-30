@@ -3,6 +3,7 @@ import { AuthContext } from '../contexts/auth.context';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { IoMdPin } from 'react-icons/io';
+import Profilebg from '../assets/profilebg.png';
 
 function Profile() {
 
@@ -45,8 +46,7 @@ function Profile() {
 
     console.log(user)
     return (
-        <div>
-
+        <div className='ProfileBG'>
 
             {thisUser && (
                 <div>
@@ -59,6 +59,14 @@ function Profile() {
                     <h4>Your Comments</h4>
                     {thisUser.comments.map(comment => {
                         return <p className='comment_profile'>{comment.content}</p>
+                    })}
+                    {thisUser.nextCities.map((city) => {
+                        return (
+                            <div>
+                                <h4>{city.cityName}</h4>
+
+                            </div>
+                        )
                     })}
                     <div className='profile_btns'>
                         <Link to={`/profile/edit/${thisUser._id}`} className='edit-profile'>Edit Profile</Link>

@@ -382,7 +382,9 @@ form input,
 /* CITY PAGE */
 
 .fav-btn img {
-  width: 40px;
+  width: 60px;
+  margin-right: 20px;
+  margin-top: 20px;
 }
 
 .header-img {
@@ -423,6 +425,11 @@ form input,
   font-weight: 500;
 }
 
+.comments-city {
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
 .add-comment_btn {
   background-color: #A45836;
   color: white;
@@ -435,6 +442,7 @@ form input,
   color: #A45836;
   margin-left: 20px;
   margin-top: 20px;
+  padding-top: 10px;
 }
 
 .comment_section {
@@ -565,4 +573,19 @@ form input,
 
 .profile-location {
   color: #423839;
+}
+
+.profilebg {
+  position: initial;
+  width: 100vw;
+
+}
+
+/* Profile BG */
+
+.ProfileBG {
+  background-image: url("./assets/profilebg.png");
+  background-position: center;
+  background-size: cover;
+  width: 100%;
 }

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import '../App.css';
 import { Link } from 'react-router-dom';
 import TopCities from '../pages/TopCities';
@@ -6,10 +6,11 @@ import Home from '../pages/Home';
 import Profile from '../pages/Profile';
 import LogoWhite from '../assets/logowhite.png';
 import { Button } from './Button';
+import { AuthContext } from '../contexts/auth.context';
 
 
 function Navbar() {
-
+    const { loggedIn, user, logout } = useContext(AuthContext);
     const [click, setClick] = useState(false);
     const [button, setButton] = useState(true);
 
@@ -68,7 +69,18 @@ function Navbar() {
                     </ul>
                 </div>
                 <div>
-                    {button && <Link><Button buttonStyle='btn--outline'>SIGN UP</Button></Link>}
+
+                    {loggedIn && <a href="/"></a>}
+                    {loggedIn && (
+
+
+                        <a href="/" onClick={logout}> {button && <Button buttonStyle='btn--outline'>LOGOUT</Button>}</a>
+
+                    )}
+                    {!loggedIn && (
+                        <a href="/login"> {button && <Button buttonStyle='btn--outline'>LOGIN</Button>}</a>
+
+                    )}
 
                     <div id="myNav" className="overlay">
                         <a href="javascript:void(0)" className="closebtn" onClick={closeNav}>&times;</a>
@@ -83,7 +95,7 @@ function Navbar() {
                 </div>
             </nav>
 
-            <TopCities />
+
 
         </>
     )
