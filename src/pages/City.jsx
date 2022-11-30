@@ -57,26 +57,34 @@ function City() {
       {cityPage &&
         (<><img src={cityPage.cityImage} alt="city" className='header-img' />
 
-          <div className='citypage_namefav'>
-            <div>
-              <h3>{cityPage.cityName}</h3>
-              <h5>{cityPage.continent}</h5>
+          <div className='city-page_info'>
+
+            <div className='citypage_namefav'>
+              <div>
+                <h3>{cityPage.cityName}</h3>
+                <h5>{cityPage.continent}</h5>
+              </div>
+              <Link className='fav-btn'> <img src={FavButton} alt="" /></Link>
             </div>
-            <Link className='fav-btn'> <img src={FavButton} alt="" /></Link>
+            <div className='city-api-info'>
+              <p><div dangerouslySetInnerHTML={{ __html: cityPage.description }} /></p>
+
+              <p> <span>Currency:</span> {cityPage.currency}</p>
+              <p><span>Language: </span>{cityPage.language}</p>
+              <p><span>English Skills:</span>  {cityPage.englishSkills}</p>
+              <p> <span> Life Expectancy:</span> {cityPage.lifeExpectancy}</p>
+              <p> <span>CoWorking Spaces:</span> {cityPage.coworkingSpaces}</p>
+            </div>
           </div>
 
-          <p>Summary: {cityPage.summary}</p>
-          <p>Currency: {cityPage.currency}</p>
-          <p>Language: {cityPage.language}</p>
-          <p>English Skills: {cityPage.englishSkills}</p>
-          <p>Life Expectancy: {cityPage.lifeExpectancy}</p>
-          <p>CoWorking Spaces: {cityPage.coworkingSpaces}</p>
+          <div className='comment_section'>
+            
+            <h4 className='comments'>Comments</h4>
 
-          <h4 className='comments'>Comments</h4>
-
-          <div className='comments-city'> {cityPage.comments.map(comment => {
-            return <p>{comment.content}</p>
-          })}
+            <div className='comments-city'> {cityPage.comments.map(comment => {
+              return <p>{comment.content}</p>
+            })}
+            </div>
           </div>
         </>)
       }

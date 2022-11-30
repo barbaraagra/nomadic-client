@@ -4,6 +4,12 @@
   padding: 0;
 }
 
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 /* NAVBAR */
 
 .navbar {
@@ -333,6 +339,7 @@ form input,
   background-color: #423839;
   color: white;
   text-align: right;
+  width: 100%;
 }
 
 .footer p {
@@ -346,6 +353,30 @@ form input,
   color: #A45836;
   font-size: 30px;
   margin: 20px;
+}
+
+.home-illustrations {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.home-illustrations img {
+  width: 12vw;
+  margin-top: 40px;
+}
+
+.home-illustrations p {
+  font-size: 17px;
+  color: #423839;
+  font-weight: 500;
+  margin-bottom: 40px;
+}
+
+.home-ilustration_each {
+  text-align: center;
 }
 
 /* CITY PAGE */
@@ -364,6 +395,22 @@ form input,
   flex-wrap: nowrap;
   justify-content: space-between;
   align-items: center;
+}
+
+.city-home_container {
+  width: 100vw;
+}
+
+.city-page_info {
+  margin: 10px 20px;
+}
+
+.city-api-info {
+  margin-right: 250px;
+}
+
+.city-api-info span {
+  font-weight: 500;
 }
 
 .citypage_namefav h3 {
@@ -386,6 +433,12 @@ form input,
 
 .comments {
   color: #A45836;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.comment_section {
+  background-color: #6d5d5e26;
 }
 
 .form-commentbox {
@@ -393,11 +446,66 @@ form input,
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: space-evenly;
+  background-color: #6d5d5e26;
 }
 
 .form-commentbox label {
   text-align: center;
 }
+
+.city-card_cont {
+  margin-bottom: 40px;
+}
+
+.card-image {
+  height: 50vh;
+  width: 40vw;
+  border-radius: 20px;
+}
+
+/* NOVO CARD ITEM */
+.city-card_container {
+  text-decoration: none;
+}
+
+.city-card_container img {
+  width: 45vw;
+}
+
+.cards_item_text {
+  color: #A45836;
+  font-size: 22px;
+  margin-left: 20px;
+}
+
+.city-home_container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+  text-decoration: none;
+}
+
+.card_icon-name {
+  color: #A45836;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  margin-right: 20px;
+
+}
+
+.card-icon {
+  width: 50px;
+  height: 30px;
+}
+
 
 /* PROFILE */
 
@@ -423,4 +531,38 @@ form input,
 
 .delete-profile:hover {
   background-color: #6d5d5e;
+}
+
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  margin: 30px;
+}
+
+.comment_profile {
+  margin: 20px;
+}
+
+.profilepic {
+  width: 15vw;
+  border-radius: 50%;
+}
+
+.profile_btns {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.profile-title {
+  color: #A45836;
+}
+
+.profile-location {
+  color: #423839;
 }
