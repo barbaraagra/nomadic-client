@@ -10,11 +10,13 @@ function CardItem(props) {
         <>
             <div className='city-card_cont'>
                 <Link to={`/cities/${city._id}`} className='city-card_container'>
-                    <img className='card-image' src={city.cityImgMobile
-                    } alt="city" />
-                    <div className='card_icon-name'>
-                        <h4 className='cards_item_text'>{city.cityName}</h4>
-                        <h4><BiWorld className='card-icon' />+100</h4>
+                    <div className='city-card_new'>
+                        <img className='card-image' src={city.cityImgMobile
+                        } alt="city" />
+                        <div className='card_icon-name'>
+                            <h4 className='cards_item_text'>{city.cityName}</h4>
+                            <h4><BiWorld className='card-icon' />+100</h4>
+                        </div>
                     </div>
                 </Link>
             </div>

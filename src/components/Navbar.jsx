@@ -2,6 +2,7 @@ import { useState, useEffect, useContext } from 'react';
 import '../App.css';
 import { Link } from 'react-router-dom';
 import TopCities from '../pages/TopCities';
+import CompareCities from '../pages/CompareCities';
 import Home from '../pages/Home';
 import Profile from '../pages/Profile';
 import LogoWhite from '../assets/logowhite.png';
@@ -60,6 +61,9 @@ function Navbar() {
                             <Link to='/top-cities' element={<TopCities />} className='nav-links' onClick={closeMobileMenu}>TOP CITIES</Link>
                         </li>
                         <li className='nav-item'>
+                            <Link to='/compare-cities' element={<CompareCities />} className='nav-links' onClick={closeMobileMenu}>COMPARE CITIES</Link>
+                        </li>
+                        <li className='nav-item'>
                             <Link to='/profile' element={<Profile />} className='nav-links' onClick={closeMobileMenu}>PROFILE</Link>
                         </li>
 
@@ -87,6 +91,7 @@ function Navbar() {
                         <div className="overlay-content">
                             <Link to='/' onClick={closeNav}>HOME</Link>
                             <Link to='/top-cities' onClick={closeNav}>TOP CITIES</Link>
+                            <Link to='/compare-cities' onClick={closeNav}>COMPARE CITIES</Link>
                             <Link to='/profile' onClick={closeNav}>PROFILE</Link>
 
                         </div>

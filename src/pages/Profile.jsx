@@ -3,7 +3,7 @@ import { AuthContext } from '../contexts/auth.context';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { IoMdPin } from 'react-icons/io';
-import Profilebg from '../assets/profilebg.png';
+import { FaPlane } from 'react-icons/fa';
 
 function Profile() {
 
@@ -56,22 +56,29 @@ function Profile() {
                         <h4 className='profile-location'><IoMdPin />Currently living in {thisUser.location}</h4>
                     </div>
 
-                    <h4>Your Comments</h4>
-                    {thisUser.comments.map(comment => {
-                        return <p className='comment_profile'>{comment.content}</p>
-                    })}
-                    {thisUser.nextCities.map((city) => {
-                        return (
-                            <div>
-                                <h4>{city.cityName}</h4>
-
-                            </div>
-                        )
-                    })}
                     <div className='profile_btns'>
                         <Link to={`/profile/edit/${thisUser._id}`} className='edit-profile'>Edit Profile</Link>
                         <button onClick={deleteProfile} className='delete-profile'>Delete Profile</button>
                     </div>
+
+
+                    <h4 className='your-com'>Your Comments</h4>
+                    {thisUser.comments.map(comment => {
+                        return <p className='comment_profile'>{comment.content}</p>
+                    })}
+
+                    <h4 className='profile_next-cities'>Cities I plan on going next <FaPlane /> </h4>
+
+                    <div className='profile_com-body'>
+                        {thisUser.nextCities.map((city) => {
+                            return (
+                                <div>
+                                    <h4>{city.cityName}</h4>
+
+                                </div>
+                            )
+                        })}</div>
+
                 </div>
             )}
 

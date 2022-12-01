@@ -10,7 +10,6 @@ import Start from './pages/Start';
 import Profile from './pages/Profile';
 import City from './pages/City';
 import UpdateProfile from './pages/UpdateProfile';
-import Footer from './components/Footer';
 import CompareCities from './pages/CompareCities';
 
 
@@ -29,7 +28,7 @@ function App() {
         <Route path='/cities/:id' element={<City />} />
         <Route path='/compare-cities' element={<CompareCities />} />
       </Routes>
-      <Footer />
+
     </div>
   );
 }

@@ -3,6 +3,7 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../contexts/auth.context';
 import axios from 'axios';
 import FavButton from '../assets/fav.png';
+import UnFavButton from '../assets/unfavourite.png'
 import '../App.css'
 
 
@@ -67,6 +68,30 @@ function City() {
     }
   };
 
+  const editComment = async () => {
+    try {
+      const response = await axios.delete(`${process.env.REACT_APP_API_URL}/comment-delete/${user._id}/${id}`, {
+      });
+      console.log(response.data)
+      navigate('/');
+
+    } catch (error) {
+      console.log(error)
+    }
+  };
+
+  const deleteComment = async () => {
+    try {
+      const response = await axios.delete(`${process.env.REACT_APP_API_URL}/comment-delete/${user._id}/${id}`, {
+      });
+      console.log(response.data)
+      navigate('/');
+
+    } catch (error) {
+      console.log(error)
+    }
+  };
+
   useEffect(() => {
     getCityPage();
   }, []);
@@ -85,8 +110,9 @@ function City() {
                 <h5>{cityPage.continent}</h5>
               </div>
 
-              {isFavourite ? <p>Unfavourite:</p> : <p>Favourite</p>}
-              <button onClick={addFavourite} className='fav-btn'> <img src={FavButton} alt="" /></button>
+
+              {isFavourite ? <button onClick={addFavourite} className='unfav-btn'> <img src={UnFavButton} alt="" /></button> : <button onClick={addFavourite} className='fav-btn'> <img src={FavButton} alt="" /></button>}
+
 
             </div>
             <div className='city-api-info'>
@@ -103,10 +129,13 @@ function City() {
           <div className='comment_section'>
 
             <h4 className='comments'>Comments</h4>
-
+            <h5 className='comment-username'>{user.username}</h5>
             <div className='comments-city'> {cityPage.comments.map(comment => {
               return <p>{comment.content}</p>
             })}
+              <button className='city-edit_btn' onClick={editComment}> Edit comment </button>
+              <button className='city-delete_btn' onClick={deleteComment}> Delete comment </button>
+
             </div>
           </div>
         </>)

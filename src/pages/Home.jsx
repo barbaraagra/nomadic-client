@@ -3,10 +3,11 @@ import '../App.css';
 import SectionOne from '../components/SectionOne';
 import axios from 'axios';
 import CardItem from '../components/cityCards/CardItem';
-import { Link } from 'react-router-dom';
 import WorldImg from '../assets/world.png';
 import Passport from '../assets/pass.png';
 import Connect from '../assets/people.png';
+import Adventures from '../assets/adventures.png';
+
 
 function Home() {
     const [cities, setCities] = useState([]);
@@ -52,6 +53,15 @@ function Home() {
                 {cities.map(city => {
                     return <CardItem city={city} />
                 })}
+            </div>
+
+            <div className='home-footer_book'>
+                <div className='home-footer_text'>
+                    <h5>Let us help you to find your</h5>
+                    <h1>NEXT DESTINATION</h1>
+                    <button className='home-footer_btn'>SEE MORE</button>
+                </div>
+                <img src={Adventures} alt="illustration" />
             </div>
         </>
     )
