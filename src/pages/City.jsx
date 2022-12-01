@@ -10,12 +10,11 @@ import '../App.css'
 
 function City() {
   const [content, setContent] = useState("");
-  const [isFavourite, setIsFavourite] = useState(false)
-
+  const [isFavourite, setIsFavourite] = useState(false);
   const [cityPage, setCityPage] = useState(null);
+  const [content, setContent] = useState("");
   const { id } = useParams();
-  const { user, loggedIn } = useContext(AuthContext)
-
+  const { user, loggedIn } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const handleContent = (e) => setContent(e.target.value);
@@ -70,14 +69,15 @@ function City() {
 
   const editComment = async () => {
     try {
-      const response = await axios.put(`${process.env.REACT_APP_API_URL}/comments/create/${id}`, {content
+      const response = await axios.put(`${process.env.REACT_APP_API_URL}/comments/create/${id}`, {
+        content
       });
-
+      setContent(response.data.content);
       console.log(response.data)
-      navigate('/');
+      navigate(`/cities/${id}`);
 
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
   };
 
@@ -86,7 +86,7 @@ function City() {
       const response = await axios.delete(`${process.env.REACT_APP_API_URL}/comment-delete/${user._id}/${id}`, {
       });
       console.log(response.data)
-      navigate('/');
+      navigate(`/cities/${id}`);
 
     } catch (error) {
       console.log(error)
