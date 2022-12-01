@@ -47,6 +47,7 @@ function Profile() {
     console.log(user)
     return (
         <div className='ProfileBG'>
+            <h1 className='compare-titles'>Profile</h1>
 
             {thisUser && (
                 <div>

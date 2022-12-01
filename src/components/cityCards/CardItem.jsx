@@ -15,7 +15,10 @@ function CardItem(props) {
                         } alt="city" />
                         <div className='card_icon-name'>
                             <h4 className='cards_item_text'>{city.cityName}</h4>
-                            <h4><BiWorld className='card-icon' />+100</h4>
+                            <div className='card_icon-100'>
+                                <BiWorld className='card-icon' />
+                                <h4>+100</h4>
+                            </div>
                         </div>
                     </div>
                 </Link>

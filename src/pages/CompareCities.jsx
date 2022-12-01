@@ -64,8 +64,8 @@ function CompareCities() {
                     <div className='cityOne'>
                         <h1 className='city-name_h1'>{cityOne.cityName}</h1>
                         <img src={cityOne.cityImgMobile} alt="city" className='comp-img' />
+                        <p><div dangerouslySetInnerHTML={{ __html: cityOne.description }} className='summary_comp' /></p>
                         <div className='city-api-info_comp'>
-                            <p><div dangerouslySetInnerHTML={{ __html: cityOne.description }} className='summary_comp' /></p>
 
                             <p> <span>Currency:</span> {cityOne.currency}</p>
                             <p><span>Language: </span>{cityOne.language}</p>
