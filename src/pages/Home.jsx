@@ -7,6 +7,8 @@ import WorldImg from '../assets/world.png';
 import Passport from '../assets/pass.png';
 import Connect from '../assets/people.png';
 import Adventures from '../assets/adventures.png';
+import { Button } from '../components/Button';
+
 
 
 function Home() {
@@ -59,7 +61,8 @@ function Home() {
                 <div className='home-footer_text'>
                     <h5>Let us help you to find your</h5>
                     <h1>NEXT DESTINATION</h1>
-                    <button className='home-footer_btn'>SEE MORE</button>
+                    <Button className='btns' buttonStyle='btn--outline'
+                        buttonSize='btn--large'>SEE MORE</Button>
                 </div>
                 <img src={Adventures} alt="illustration" />
             </div>

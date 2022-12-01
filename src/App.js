@@ -11,6 +11,7 @@ import Profile from './pages/Profile';
 import City from './pages/City';
 import UpdateProfile from './pages/UpdateProfile';
 import CompareCities from './pages/CompareCities';
+import Error from './pages/Error';
 
 
 function App() {
@@ -27,6 +28,8 @@ function App() {
         <Route path='/top-cities' element={<TopCities />} />
         <Route path='/cities/:id' element={<City />} />
         <Route path='/compare-cities' element={<CompareCities />} />
+        <Route path='*' element={<Error />} />
+
       </Routes>
 
     </div>

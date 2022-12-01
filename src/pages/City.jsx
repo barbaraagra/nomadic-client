@@ -70,7 +70,7 @@ function City() {
 
   const editComment = async () => {
     try {
-      const response = await axios.delete(`${process.env.REACT_APP_API_URL}/comment-delete/${user._id}/${id}`, {
+      const response = await axios.put(`${process.env.REACT_APP_API_URL}/comments/create/${user._id}/${id}`, {
       });
       console.log(response.data)
       navigate('/');

@@ -405,6 +405,7 @@ form input,
 .home-footer_book h1 {
   color: white;
   font-size: 45px;
+  padding-bottom: 30px;
 }
 
 .home-footer_text {
@@ -790,4 +791,10 @@ form input,
   background-color: #a4593650;
   font-weight: 600;
   margin: 10px 30px;
+}
+
+/* ERROR */
+
+.errorpage {
+  width: 100%;
 }

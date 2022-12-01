@@ -48,10 +48,7 @@ function Navbar() {
             <nav className='navbar'>
                 <div className="navbar-container">
                     <Link to='/' className='navbar-logo' onClick={closeMobileMenu}> <img src={LogoWhite} alt="nomadic" /> </Link>
-                    {/* 
-                    <div className="menu-icon" onClick={handleClick} >
-                        <i className={click ? 'fas fa-times' : 'fa fa-bars'} />
-                    </div> */}
+
 
                     <ul className={click ? 'navmenu active' : 'nav-menu'}>
                         <li className='nav-item'>
