@@ -576,7 +576,7 @@ form input,
   margin-bottom: 40px;
   padding: 30px 10px;
   border-radius: 20px;
-  background-color: #6d5d5e19;
+  background-color: #a459362a;
 }
 
 .citu-card_cont:hover {
@@ -620,6 +620,7 @@ form input,
   align-items: center;
   align-content: center;
   margin-right: 20px;
+  padding-top: 10px;
 
 }
 
@@ -796,5 +797,9 @@ form input,
 /* ERROR */
 
 .errorpage {
+  width: 100%;
+}
+
+.explore-pic, .exploretwo {
   width: 100%;
 }

@@ -12,7 +12,6 @@ function City() {
   const [content, setContent] = useState("");
   const [isFavourite, setIsFavourite] = useState(false);
   const [cityPage, setCityPage] = useState(null);
-  const [content, setContent] = useState("");
   const { id } = useParams();
   const { user, loggedIn } = useContext(AuthContext);
   const navigate = useNavigate();

@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import '../App.css';
+import ExploreTwo from '../assets/exploretwo.png'
 
 function CompareCities() {
     const [cities, setCities] = useState([]);
@@ -45,6 +47,7 @@ function CompareCities() {
 
     return (
         <>
+            <img src={ExploreTwo} alt="header" className='exploretwo' />
             <h1 className='compare-titles'>Compare Cities</h1>
 
             <select name="cityOne" className='drop_one' onChange={(e) => getCityOne(e.target.value)}>

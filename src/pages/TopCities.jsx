@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import CardItem from '../components/cityCards/CardItem';
+import Explore from '../assets/explore.png';
+import '../App.css';
 
 function TopCities() {
   const [cities, setCities] = useState([]);
@@ -23,6 +25,7 @@ function TopCities() {
 
   return (
     <>
+      <img src={Explore} alt="header" className='explore-pic' />
       <h1 className='home-titles'>Top Cities for Digital Nomads</h1>
 
       <div className='city-home_container'>
