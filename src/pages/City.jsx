@@ -70,8 +70,9 @@ function City() {
 
   const editComment = async () => {
     try {
-      const response = await axios.put(`${process.env.REACT_APP_API_URL}/comments/create/${user._id}/${id}`, {
+      const response = await axios.put(`${process.env.REACT_APP_API_URL}/comments/create/${id}`, {content
       });
+
       console.log(response.data)
       navigate('/');
 
