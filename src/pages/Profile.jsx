@@ -64,7 +64,6 @@ function Profile() {
 
 
                     <h4 className='your-com'>Your Comments</h4>
-                    <h3>{city.cityName}</h3>
                     {thisUser.comments.map(comment => {
                         return <p className='comment_profile'>{comment.content}</p>
                     })}
